@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import {Route, Routes} from 'react-router-dom'
 import UsersPage from './pages/UsersPage';
 import TestsPage from './pages/TestsPage';
+import AuthorizationPage from './pages/AuthorizationPage';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Navigation />
       <Routes>
         <Route path='/Users' element={<UsersPage />} />
-        <Route path='/Tests' element={<TestsPage />} />
+        <Route path='/' element={<TestsPage />} />
+        <Route path='/Auth' element={<AuthorizationPage />} />
       </Routes>
     </>
   );
