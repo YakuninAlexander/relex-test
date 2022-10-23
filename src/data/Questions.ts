@@ -1,6 +1,6 @@
 import { IQuestion } from "./Interfaces";
 
-const question: IQuestion = {
+export const question: IQuestion = {
   question: '',
   answer: []
 } // заглушка для вопроса

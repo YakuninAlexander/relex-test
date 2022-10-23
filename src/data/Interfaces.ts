@@ -30,3 +30,14 @@ export interface IUser {
   surname: string
   age: number
 }
+
+export interface IStatistic {
+  userID: number //польз
+  testID: number //тест
+  FIO: string //фио
+  testTitle: string //название теста
+  countOfQuestions: number //кол-во вопросов в тесте
+  attemptsCount: number //количество попыток
+  correctsAnswerCount: number // количесвто успешных прохождений
+  attempts: IPrompt[] //попытки
+}

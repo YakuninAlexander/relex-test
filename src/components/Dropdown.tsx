@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 
-export default function Dropdown() {
+interface DropdownProps {
+  data: {
+    id: number
+    str: string
+  }[]
+}
+
+export default function Dropdown({data}: DropdownProps) {
   const [vis, setVis] = useState<boolean>(false);
+  function onClickHandler(e:any) {
+    setVis(!vis);
+  }
+
   return(
     <div className='relative mx-auto w-[560px] font-light'>
       <input 
@@ -11,61 +22,26 @@ export default function Dropdown() {
         onClick={() => setVis(!vis) }
         readOnly
       />
-      { vis && <ul className='z-50 list-none text-center absolute top-[42px] left-0 right-0 overflow-y-scroll max-h-[200px] shadow-md bg-white'>
-        {/* { data?.map(user => (
+      { vis && 
+        <ul className='z-50 list-none text-center absolute top-[42px] left-0 right-0 overflow-y-scroll max-h-[200px] shadow-md bg-white'>
           <li 
-            key={user.id}
-            className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-          >
-            { user.login }
-          </li>
-        )) } */}
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 1
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 2
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 3
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 1
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 2
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 3
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 1
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 2
-        </li>
-        <li 
-          className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
-        >
-          Test 3
-        </li>
-      </ul> }
+              key={-1}
+              className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
+              onClick={onClickHandler}
+            >
+              Click me
+            </li>
+          { data.map((data) => (
+            <li 
+              key={data.id}
+              className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
+              onClick={onClickHandler}
+            >
+              { data.str }
+            </li>
+          ))}
+        </ul>
+      }
     </div>
   )
 }

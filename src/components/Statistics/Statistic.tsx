@@ -1,14 +1,24 @@
 import React from 'react';
+import { IPrompt } from '../../data/Interfaces';
 import PromptsList from './PromptsList';
 
-export default function Statistic() {
+interface StatisticProps {
+  FIO: string
+  testTitle: string
+  countOfPrompt: number
+  correctAnswerCount: number
+  percent: number
+  attempts: IPrompt[]
+}
+
+export default function Statistic({FIO, testTitle, attempts, correctAnswerCount, countOfPrompt,percent}: StatisticProps) {
   return(
     <div className='rounded-md shadow-md bg-gray-100 max-w-sm w-full px-5 py-3 hover:outline hover:outline-gray-300 hover:shadow-lg'>
-      <h3 className='text-2xl font-light'>FIO</h3>
-      <h3 className='text-lg font-semibold'>Test Title</h3>
-      <p className='text-lg'>Count of Prompt</p>
-      <p className='text-lg'>Count of Successful and %</p>
-      <PromptsList />
+      <h3 className='text-2xl font-light'>{FIO}</h3>
+      <h3 className='text-lg font-semibold'>{testTitle}</h3>
+      <p className='text-lg'>{`Кол-во попыток: ${countOfPrompt}`}</p>
+      <p className='text-lg'>{`Успешно пройденные: ${correctAnswerCount} Процент: ${percent} `}</p>
+      <PromptsList attempts={attempts} />
     </div>
   )
 }
