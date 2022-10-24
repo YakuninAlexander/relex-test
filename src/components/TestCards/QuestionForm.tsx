@@ -7,7 +7,6 @@ interface QuestionFormProps{
 }
 
 export default function QuestionForm({deleteEnable, id, onDelete}: QuestionFormProps) {
-  
   const [state, setState] = useState({
     question: '',
     firstAnswer:'', 
@@ -27,30 +26,33 @@ export default function QuestionForm({deleteEnable, id, onDelete}: QuestionFormP
   }
 
   return(
-    <fieldset className='border mx-2'>
-      <input type='text' value={state.question} name='question' onChange={onChangeHandler} />
-      <div>
+    <fieldset className='border rounded-md shadow-md hover:shadow-lg hover:border-gray-300  p-3 flex flex-col gap-2 '>
+      <label className='flex flex-row justify-between mb-3'>
+        Вопрос:
+        <input className='w-80 rounded-sm shadow-sm outline outline-gray-200 px-1.5' type='text' value={state.question} name='question' onChange={onChangeHandler} />
+
+      </label>
+      <div className='flex flex-row justify-between'>
         <input type='radio' checked={1===state.correctAnswer} onChange={(e) => onChangeCorrectHandler(e, 1)}/>
-        <input type='text' value={state.firstAnswer} name='firstAnswer' onChange={onChangeHandler} />
+        <input className='w-80 rounded-sm shadow-sm outline outline-gray-200 px-1.5' type='text' value={state.firstAnswer} name='firstAnswer' onChange={onChangeHandler} />
       </div>
 
-      <div>
+      <div className='flex flex-row justify-between'>
         <input type='radio' checked={2===state.correctAnswer} onChange={(e) => onChangeCorrectHandler(e, 2)}/>
-        <input type='text' value={state.secondAnswer} name='secondAnswer' onChange={onChangeHandler} />
+        <input className='w-80 rounded-sm shadow-sm outline outline-gray-200 px-1.5' type='text' value={state.secondAnswer} name='secondAnswer' onChange={onChangeHandler} />
       </div>
 
-      <div>
+      <div className='flex flex-row justify-between'>
         <input type='radio' checked={3===state.correctAnswer} onChange={(e) => onChangeCorrectHandler(e, 3)}/>
-        <input type='text' value={state.thirdAnswer} name='thirdAnswer' onChange={onChangeHandler} />
+        <input className='w-80 rounded-sm shadow-sm outline outline-gray-200 px-1.5' type='text' value={state.thirdAnswer} name='thirdAnswer' onChange={onChangeHandler} />
       </div>
 
-      <div>
+      <div className='flex flex-row justify-between'>
         <input type='radio' checked={4===state.correctAnswer} onChange={(e) => onChangeCorrectHandler(e, 4)}/>
-        <input type='text' value={state.fourthAnswer} name='fourthAnswer' onChange={onChangeHandler} />
-        
+        <input className='w-80 rounded-sm shadow-sm outline outline-gray-200 px-1.5' type='text' value={state.fourthAnswer} name='fourthAnswer' onChange={onChangeHandler} />
       </div>
 
-      <button disabled={!deleteEnable} onClick={() => onDelete(id)}>Удалить</button>
+      <button className='mt-4 rounded-sm shadow-sm bg-orange-400 ' disabled={!deleteEnable} onClick={(e) => onDelete(id)}>Удалить</button>
     </fieldset>
   )
 }

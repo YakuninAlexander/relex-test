@@ -1,18 +1,18 @@
-import { prompts } from './../data/Prompts';
+import { attempts } from '../data/Attempts';
 import { users } from './../data/Users';
 import { CREATE_TEST, DELETE_TEST, CHANGE_VISIBILITY, GET_ALL_STATISTICS, GET_TEST_STATISTICS, GET_USER_STATISTICS, GET_USER_TEST_STATISTICS } from './types';
 import { tests } from './../data/Tests';
 import {  ITestState } from "./intefaces"
 import { AnyAction } from 'redux';
-import { IPrompt, IStatistic, ITest, IUser } from '../data/Interfaces';
+import { IAttempt, IStatistic, ITest, IUser } from '../data/Interfaces';
 
-function createStatistic(attempts: IPrompt[], users: IUser[], tests:ITest[]): IStatistic[] {
+function createStatistic(attempts: IAttempt[], users: IUser[], tests:ITest[]): IStatistic[] {
   const statistic: IStatistic[] = [];
 
   users.forEach(user => {
     tests.forEach(test => {
       const userTests = attempts.filter(attempt => attempt.userID === user.userID && attempt.testID === test.testID)
-      if(userTests.length!==0) {
+      if(userTests.length !== 0) {
 
         let correct = userTests.reduce((acum, elem) => {
           if(elem.correctAnswers === test.questions.length) 
@@ -43,8 +43,8 @@ function createStatistic(attempts: IPrompt[], users: IUser[], tests:ITest[]): IS
 const initialState: ITestState = {
   tests,
   users, 
-  prompts,
-  statistics: createStatistic( prompts, users, tests )
+  prompts: attempts,
+  statistics: createStatistic( attempts, users, tests )
 }
 
 

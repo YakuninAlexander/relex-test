@@ -4,6 +4,7 @@ import Card from './TestCards/Card';
 import NewTest from './TestCards/NewTest';
 import TestInfo from './TestCards/TestInfo';
 import { RootState } from '..';
+import { Link } from 'react-router-dom';
 
 export default function TestCardsList() {
   const testState = useSelector((state: RootState) => state.root.test )
@@ -22,8 +23,9 @@ export default function TestCardsList() {
           </Card>
         )
       })}
-      <Card><NewTest /></Card>
-      
+      <Link to='/NewTest'>
+        <Card><NewTest /></Card>
+      </Link>
 
     </div>
   )

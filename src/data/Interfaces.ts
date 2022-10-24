@@ -1,4 +1,4 @@
-export interface IPrompt {
+export interface IAttempt {
   userID: number
   datetime: number
   passingTime: string
@@ -39,5 +39,5 @@ export interface IStatistic {
   countOfQuestions: number //кол-во вопросов в тесте
   attemptsCount: number //количество попыток
   correctsAnswerCount: number // количесвто успешных прохождений
-  attempts: IPrompt[] //попытки
+  attempts: IAttempt[] //попытки
 }

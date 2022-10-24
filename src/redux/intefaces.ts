@@ -1,6 +1,4 @@
-import { prompts } from './../data/Prompts';
-import { IUser, IPrompt, IStatistic } from './../data/Interfaces';
-import { users } from './../data/Users';
+import { IUser, IAttempt, IStatistic } from './../data/Interfaces';
 import { ITest } from "../data/Interfaces"
 
 export interface AuthProps {
@@ -30,7 +28,7 @@ export interface IAppState {
 export interface ITestState {
   tests: ITest[]
   users: IUser[]
-  prompts: IPrompt[],
+  prompts: IAttempt[],
   statistics: IStatistic[]
 }
 

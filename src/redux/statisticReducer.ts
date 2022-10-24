@@ -1,6 +1,6 @@
 import { GET_ALL_STATISTICS, GET_TEST_STATISTICS, GET_USER_STATISTICS, GET_USER_TEST_STATISTICS } from './types';
 import { AnyAction } from 'redux';
-import { IPrompt, IStatistic, ITest, IUser } from './../data/Interfaces';
+import { IStatistic } from './../data/Interfaces';
 
 
 export const statisticReducer = (state: IStatistic[] = [], action: AnyAction) => {

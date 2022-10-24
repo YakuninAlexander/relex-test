@@ -17,7 +17,7 @@ export default function TestInfo({testID, title, description, questions, visibil
       <div className='items-center flex justify-between'>
         <label className='font-medium'>
           <input onChange={() => dispatch(changeVisibility(testID, !visibility))} checked={visibility} className='mr-2' type='checkbox'/>
-          visibility
+          Видимость теста
         </label>
 
         <button 

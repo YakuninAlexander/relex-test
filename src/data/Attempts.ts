@@ -1,6 +1,6 @@
-import { IPrompt } from './Interfaces';
+import { IAttempt } from './Interfaces';
 
-export const prompts: IPrompt[] = [
+export const attempts: IAttempt[] = [
   {
     userID: 3,
     datetime: new Date(2017, 1, 26, 12, 0, 0).getTime(),

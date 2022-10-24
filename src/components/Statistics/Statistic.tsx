@@ -1,6 +1,6 @@
 import React from 'react';
-import { IPrompt } from '../../data/Interfaces';
-import PromptsList from './PromptsList';
+import { IAttempt } from '../../data/Interfaces';
+import AttemptsList from './AttemptsList';
 
 interface StatisticProps {
   FIO: string
@@ -8,7 +8,7 @@ interface StatisticProps {
   countOfPrompt: number
   correctAnswerCount: number
   percent: number
-  attempts: IPrompt[]
+  attempts: IAttempt[]
 }
 
 export default function Statistic({FIO, testTitle, attempts, correctAnswerCount, countOfPrompt,percent}: StatisticProps) {
@@ -18,7 +18,7 @@ export default function Statistic({FIO, testTitle, attempts, correctAnswerCount,
       <h3 className='text-lg font-semibold'>{testTitle}</h3>
       <p className='text-lg'>{`Кол-во попыток: ${countOfPrompt}`}</p>
       <p className='text-lg'>{`Успешно пройденные: ${correctAnswerCount} Процент: ${percent} `}</p>
-      <PromptsList attempts={attempts} />
+      <AttemptsList attempts={attempts} />
     </div>
   )
 }

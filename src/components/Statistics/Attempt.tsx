@@ -6,7 +6,7 @@ interface PromptProps{
   corrects: number
 }
 
-export default function Prompt({ corrects, datetime, time }: PromptProps) {
+export default function Attempt({ corrects, datetime, time }: PromptProps) {
 
   function stringify(datetime: number) {
     
