@@ -8,7 +8,7 @@ export default function NewTestPage() {
   const auth = useSelector((state:RootState) => state.root.app.authorize);
 
   if(!auth) {
-    return <Navigate to='/Auth' />
+    return <Navigate to='/' />
   }
   return(
     <>

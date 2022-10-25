@@ -23,7 +23,7 @@ export default function TestCardsList() {
           </Card>
         )
       })}
-      <Link to='/NewTest'>
+      <Link to='/Tests/NewTest'>
         <Card><NewTest /></Card>
       </Link>
 

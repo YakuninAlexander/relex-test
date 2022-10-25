@@ -12,9 +12,9 @@ function App() {
       <Navigation />
       <Routes>
         <Route path='/Users' element={<UsersPage />}></Route>
-        <Route path='/' element={<TestsPage />}></Route>
-        <Route path='/Auth' element={<AuthorizationPage />} />
-        <Route path='/NewTest' element={<NewTestPage />} />
+        <Route path='/Tests' element={<TestsPage />}></Route>
+        <Route path='/' element={<AuthorizationPage />} />
+        <Route path='/Tests/NewTest' element={<NewTestPage />} />
       </Routes>
     </>
   );

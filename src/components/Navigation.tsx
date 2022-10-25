@@ -8,8 +8,8 @@ export default function Navigation() {
       <h1 className='text-3xl font-semibold'>Relex test app</h1>
       <div className='max-h-14 text-lg'>
         <Link to='/Users' className='mr-5 hover:text-pr-vivid-50'>Статистика</Link>
-        <Link to='/' className='mr-6 hover:text-pr-vivid-50'>Тесты</Link>
-        <Link to='/Auth'><img src={img} alt={'avatar'} className='inline w-12 h-12'/></Link>
+        <Link to='/Tests' className='mr-6 hover:text-pr-vivid-50'>Тесты</Link>
+        <Link to='/'><img src={img} alt={'avatar'} className='inline w-12 h-12'/></Link>
       </div>
     </nav>
   )
