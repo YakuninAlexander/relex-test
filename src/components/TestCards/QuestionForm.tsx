@@ -84,7 +84,7 @@ export default function QuestionForm({deleteEnable, id, onDelete}: QuestionFormP
         />
       </div>
 
-      <button className='mt-4 rounded-md shadow-sm bg-pr-purple-100 hover:bg-pr-purple-200 border border-pr-purple-200 hover:border-pr-purple-300 text-neut-blgr-700 hover:text-neut-blgr-900' disabled={!deleteEnable} onClick={(e) => onDelete(id)}>Удалить</button>
+      <button type='button' className='mt-4 rounded-md shadow-sm bg-pr-purple-100 hover:bg-pr-purple-200 border border-pr-purple-200 hover:border-pr-purple-300 text-neut-blgr-700 hover:text-neut-blgr-900' disabled={!deleteEnable} onClick={(e) => onDelete(id)}>Удалить</button>
     </fieldset>
   )
 }

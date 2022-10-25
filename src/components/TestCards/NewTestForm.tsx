@@ -33,6 +33,7 @@ export default function NewTestForm() {
       dispatch(addTest(test))
       setCreateQuestion(true)
     }
+
     else alert('Ошибка, название теста и описание не могут быть пустыми!')
   }
   
