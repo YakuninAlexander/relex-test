@@ -21,7 +21,7 @@ export default function Dropdown({data, setFilter}: DropdownProps) {
     <div className='relative mx-auto w-[560px] font-light'>
       <input 
         type='text'
-        className='cursor-pointer border py-2 px-4 w-full h-[42px] mb-2 text-center'
+        className='cursor-pointer border focus:outline focus:border-pr-purple-400 border-neutral-300 py-2 px-4 w-full h-[42px] mb-2 text-center'
         value={input}
         onClick={() => {setVis(!vis);} }
         readOnly
@@ -31,7 +31,7 @@ export default function Dropdown({data, setFilter}: DropdownProps) {
           <li 
               key={-1}
               value={-1}
-              className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
+              className='py-2 px-4 hover:bg-pr-purple-300 hover:text-neut-blgr-50 transition-colors cursor-pointer'
               onClick={onClickHandler}
             >
               Click me
@@ -40,7 +40,7 @@ export default function Dropdown({data, setFilter}: DropdownProps) {
             <li 
               key={data.id}
               value={data.id}
-              className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'
+              className='py-2 px-4 hover:bg-pr-purple-300 hover:text-neut-blgr-50 transition-colors cursor-pointer'
               onClick={onClickHandler}
             >
               { data.str }

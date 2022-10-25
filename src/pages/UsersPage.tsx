@@ -13,6 +13,7 @@ export default function UsersPage() {
   
   return (
     <>
+      <h1 className='mt-8 text-center text-5xl text-pr-purple-600 font-medium'>Статистика пользователей</h1>
       <Filter />
       <StatisticsList />
     </>

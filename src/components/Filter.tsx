@@ -24,7 +24,7 @@ export default function Filter() {
   }
 
   return (
-    <div className='flex justify-between mx-6 my-10'>
+    <div className='flex justify-between text-neut-blgr-700 mx-6 my-7'>
       <div className='flex text-xl font-medium items-center gap-4'>
         <label>Пользователи:</label>
         <Dropdown data={users} setFilter={setSelectedUser}/>

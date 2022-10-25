@@ -42,25 +42,25 @@ export default function NewTestForm() {
   }
 
   return(
-    <form className='border-2 border-gray-500 rounded-md shadow-md m-12 py-6 px-4' onSubmit={(e) => onSubmitHandler(e)}>
-      <h3 className='text-2xl font-light mb-3'>Создание теста</h3>
-      <label className='text-lg font-normal block mb-3 font-mono'>
+    <form className='border-2 border-neut-blgr-400 bg-neut-blgr-100 rounded-md shadow-md m-12 py-6 px-4' onSubmit={(e) => onSubmitHandler(e)}>
+      <h3 className='text-2xl text-neut-blgr-800 font-light mb-3'>Создание теста</h3>
+      <label className='text-lg text-neut-blgr-700 font-normal block mb-3 font-mono'>
         Название теста:
-        <input maxLength={20} className='min-w-[400px]  rounded-sm shadow-sm outline outline-gray-500 ml-2 px-1.5' type='text' name='title' value={test.title} onChange={onChangeHandler} />
+        <input maxLength={20} className='min-w-[400px] bg-neut-blgr-200 rounded-sm shadow-sm outline outline-neut-blgr-500 focus:outline-2 focus:bg-neut-blgr-300 ml-2 px-1.5' type='text' name='title' value={test.title} onChange={onChangeHandler} />
       </label>
-      <label className='text-lg font-normal block font-mono mb-3'>
+      <label className='text-lg text-neut-blgr-700 font-normal block font-mono mb-3'>
         Описание теста:
-        <textarea className='min-w-[400px] rounded-sm shadow-sm outline outline-gray-500 ml-2 px-1.5' name='description' value={test.description} onChange={onChangeHandler} />
+        <textarea className='min-w-[400px] rounded-sm bg-neut-blgr-200 shadow-sm outline outline-neut-blgr-500 focus:outline-2 focus:bg-neut-blgr-300 ml-2 px-1.5' name='description' value={test.description} onChange={onChangeHandler} />
       </label>
-      <label className='text-lg font-normal block font-mono mb-3'>
+      <label className='text-lg text-neut-blgr-700 font-normal block font-mono mb-3'>
         Видимость теста:
-        <input className='rounded-sm shadow-sm outline outline-gray-500 ml-2 px-1.5' type='checkbox' name='visibility' checked={test.visibility} onChange={onToggleHandler} />
+        <input className='rounded-sm shadow-sm outline outline-neut-blgr-500 ml-2 px-1.5' type='checkbox' name='visibility' checked={test.visibility} onChange={onToggleHandler} />
       </label>
       
       <QuestionsForm test={test} setTest={setTest}/>
 
       <div className='flex w-full'>
-        <button className='pointer w-80 bg-lime-300 outline outline-lime-400 rounded-md shadow-md mt-10 text-xl mx-auto' type='submit'>Создать тест</button>
+        <button className='pointer w-80 bg-pr-purple-200 outline outline-pr-purple-400 text-neut-blgr-900 rounded-md shadow-md mt-10 text-xl mx-auto' type='submit'>Создать тест</button>
       </div>
     </form>
   )

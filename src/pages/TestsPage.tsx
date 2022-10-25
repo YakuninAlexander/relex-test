@@ -12,6 +12,7 @@ export default function TestsPage() {
   
   return(
     <>
+      <h1 className='mt-8 text-center text-5xl text-pr-purple-600 font-medium'>Тесты</h1>
       <TestCardsList />
     </>
   )
