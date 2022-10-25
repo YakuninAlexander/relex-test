@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+Тестовое задание РЭЛЭКС
+========================
+Цель:
+------------------------
+Разработать Web приложение для администрирования системы тестирования.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Требуется разработать Web приложение для администрирования системы тестирования, которое позволяет просматривать статистику прохождения тестов у каждого пользователя и управлять тестами.
 
-## Available Scripts
+В приложении необходимо реализовать: 
+Форму входа в приложение. Данные для входа: Administrator/12345.
+Информацию об авторизации хранить в LocalStorage простым параметром true/false. БД не требуется. Также пользователю необходимо иметь возможность выхода из учетной записи.
 
-In the project directory, you can run:
+Приложение должно иметь две страницы: «Тесты» и «Пользователи».
+В «Тестах» представлен список всех тестов в системе, доступных для прохождения. Каждый тест можно включить/отключить (влияет на видимость пользователям) или удалить. Также администратору необходимо иметь возможность добавить новый, в котором должно быть название и от 5 до 15 вопросов, в каждом по 4 ответа с одним правильным.
 
-### `npm start`
+На странице «Пользователи» администратор может выбрать пользователя для просмотра статистики по тестам. Тест можно выбрать по названию из выпадающего списка. Статистика по каждому представлена в виде:
+* общее количество попыток (вычислять из списка всех попыток);
+* количество успешно пройденных и процент (все правильные ответы);
+* средний балл (вычислять из списка всех попыток);
+* список всех попыток, где есть:
+  + дата и время начала теста;
+  + время, которое было затрачено на прохождение;
+  + количество правильных ответов;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Все данные для тестов и по пользователям можно брать, используя import из отдельного файла, в котором заранее определена структура и формат — произвольный, но интуитивно понятный.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Описание решения:
+------------------------
+### Стек технологий
+1. React v18.2.0
+2. React router dom v6.4.2
+3. React-redux v8.0.4
+4. Typescript v4.8.4
+5. Tailwind v3.2.0
 
-### `npm test`
+### Результат работы
+В конечном итоге было получено следующее приложение.
+Начальный экран веб-приложения спозиционирован на окне авторизации
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/81932920/197656422-d0354651-9c93-42dd-8bb1-2aafccfb7bda.png "Рис. 1.1. Окно авторизации.")
 
-### `npm run build`
+При введении неправильных входных даннных у нас выводится сообщение об этом с помощью alert().
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Как только был произведен успешный вход, у нас открывается личный кабинет, в котором мы можем выйти из нашего аккаунта
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://user-images.githubusercontent.com/81932920/197657513-6293e76d-195c-4e2f-b011-c18479dfe2bd.png "Рис. 1.2. Окно личного кабинета.")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+После авторизации мы можем переходить по страницам нашего приложения. 
 
-### `npm run eject`
+На вкладке "Тесты" мы можем видеть нашу информацию о всех тестах в системе, где мы можем изменять видимость теста и удалять их.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![image](https://user-images.githubusercontent.com/81932920/197658039-ce50b639-7fc1-4ad6-81e7-ec7a503154f0.png "Рис. 2.1. Вкладка с тестами (1)")
+![image](https://user-images.githubusercontent.com/81932920/197658057-e0e26b43-cfac-442f-9512-4e0f8903e2b4.png "Рис. 2.2. Вкладка с тестами (2)")
+ 
+Также по клику на кнопку добавления теста, мы переходим на вкладку создания тестов 
+![image](https://user-images.githubusercontent.com/81932920/197658204-8ed2d77a-6c47-4acd-b3e9-d059347ec505.png "Рис. 2.3. Вкладка добавления тестов.")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+На вкладке "Статистика" мы видим все попытки пользователей пройти тест (попытки захардкожены)
+![](https://user-images.githubusercontent.com/81932920/197658643-ed1a0cf3-b9e6-4374-8936-2bfd06ca8ffe.png "Рис. 3.1. Вкладка статистики")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Где при клике на фильтры по пользователям или тестам нам высвечивается выпадающее меню со всеми нашими пользователями и тестами в системе, по которым мы можем отфильтровать наши попытки
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![](https://user-images.githubusercontent.com/81932920/197658861-94e2423d-5963-49cd-889c-dc524e2882ea.png "Рис. 3.2. Раскрытый фильтр") 
 
-## Learn More
+![](https://user-images.githubusercontent.com/81932920/197658913-44ddcfa2-a6c1-4d3e-95c4-614fb41f4960.png "Рис. 3.3. Отфильтрованный список")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+Выполнил: Якунин Александр
