@@ -38,7 +38,7 @@ export default function NewTestForm() {
   
 
   if(createQuestion){
-    return <Navigate to='/' />
+    return <Navigate to='/Tests' />
   }
 
   return(
