@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 export default function TestCardsList() {
   const testState = useSelector((state: RootState) => state.root.test )
   return(
-    <div className='grid grid-cols-2 max-w-[1200px] mx-auto gap-5 place-items-center my-6'>
+    <div className='max-w-[1200px] mx-auto my-6 grid grid-cols-2 gap-5 place-items-center'>
       {testState.tests.map(e => {
         return (
           <Card key={e.testID}>

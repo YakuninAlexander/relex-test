@@ -18,16 +18,16 @@ export default function Dropdown({data, setFilter}: DropdownProps) {
   }
 
   return(
-    <div className='relative mx-auto w-[560px] font-light'>
+    <div className='relative w-[560px] mx-auto  font-light'>
       <input 
         type='text'
-        className='cursor-pointer border focus:outline focus:border-pr-purple-400 border-neutral-300 py-2 px-4 w-full h-[42px] mb-2 text-center'
+        className='cursor-pointer w-full h-[42px] mb-2 py-2 px-4 border-neutral-300 border text-center focus:outline focus:border-pr-purple-400'
         value={input}
         onClick={() => {setVis(!vis);} }
         readOnly
       />
       { vis && 
-        <ul className='z-50 list-none text-center absolute top-[42px] left-0 right-0 overflow-y-scroll max-h-[200px] shadow-md bg-white'>
+        <ul className='absolute max-h-[200px] top-[42px] left-0 right-0 overflow-y-scroll bg-white text-center list-none shadow-md z-50'>
           <li 
               key={-1}
               value={-1}

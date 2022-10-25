@@ -24,12 +24,12 @@ export default function Filter() {
   }
 
   return (
-    <div className='flex justify-between text-neut-blgr-700 mx-6 my-7'>
-      <div className='flex text-xl font-medium items-center gap-4'>
+    <div className='mx-6 my-7 text-neut-blgr-700 flex justify-between '>
+      <div className='text-xl font-medium flex items-center gap-4'>
         <label>Пользователи:</label>
         <Dropdown data={users} setFilter={setSelectedUser}/>
       </div>
-      <div className='flex text-xl font-medium items-center gap-4'>
+      <div className='text-xl font-medium flex items-center gap-4'>
         <label>Тесты:</label>
         <Dropdown data={tests} setFilter={setSelectedTest}/>
       </div>
